@@ -1,0 +1,44 @@
+def validar_decimal(valor):
+    try:
+        
+        return float(valor)
+    except ValueError:
+       
+        return False
+
+
+def soma_digitos(numero):
+    if not numero.isdigit():
+        return "Valor inválido. O número deve ser inteiro."
+    
+    
+    return sum(int(digit) for digit in numero)
+
+
+
+temp_max = input("Digite a temperatura máxima: ")
+temp_min = input("Digite a temperatura mínima: ")
+
+temp_max = validar_decimal(temp_max)
+temp_min = validar_decimal(temp_min)
+
+if temp_max is False or temp_min is False:
+    print("Valor inválido para as temperaturas. As temperaturas devem ser números decimais ou inteiros.")
+else:
+    
+    media_temperaturas = (temp_max + temp_min) / 2
+    
+    
+    variacao_temperaturas = temp_max - temp_min
+    
+   
+    print(f"Média das temperaturas: {media_temperaturas:.2f}")
+    print(f"Variação entre as temperaturas: {variacao_temperaturas:.2f}")
+
+
+numero = input("Digite um número para somar seus dígitos: ")
+
+
+
+resultado_soma = soma_digitos(numero)
+print(resultado_soma)
